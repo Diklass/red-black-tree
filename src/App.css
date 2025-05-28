@@ -1,0 +1,201 @@
+/* App.css */
+
+body, html {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background-color: #fdf2e9;
+}
+
+body {
+  font-family: 'Courier New', monospace;
+  color: #000;
+}
+
+.page-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: 100vh;
+  width: 100vw;
+  background-color: #fdf2e9;
+  padding: 2rem;
+  box-sizing: border-box;
+}
+
+.app-wrapper {
+  width: 100%;
+  margin-top: 12rem;
+  max-width: 1200px;
+  background-color: #fff;
+  box-sizing: border-box;
+  padding: 2rem;
+  border: 4px solid black;
+  border-radius: 8px;
+  box-shadow: 6px 6px 0 #000;
+}
+
+.button-panel {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+h1 {
+  font-size: 2rem;
+  border: 4px solid black;
+  background: #fdbb2d;
+  padding: 0.6rem 1.2rem;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+button {
+  --button_radius: 0.75em;
+  --button_color: #e8e8e8;
+  --button_outline_color: #000000;
+  font-size: 17px;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+  border-radius: var(--button_radius);
+  background: var(--button_outline_color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+}
+
+.button_top {
+  display: block;
+  box-sizing: border-box;
+  border: 2px solid var(--button_outline_color);
+  border-radius: var(--button_radius);
+  padding: 0.75em 1.5em;
+  background: var(--button_color);
+  color: var(--button_outline_color);
+  transform: translateY(-0.2em);
+  transition: transform 0.1s ease;
+}
+
+button:hover .button_top {
+  transform: translateY(-0.33em);
+}
+
+button:active .button_top {
+  transform: translateY(0);
+}
+
+input[type="number"] {
+  padding: 0.6rem;
+  font-size: 1rem;
+  border: 3px solid black;
+  background: #fff;
+  color: black;
+  width: 120px;
+  text-align: center;
+}
+
+.canvas-wrapper {
+  width: 100%;
+  overflow-x: auto;
+  padding: 1rem;
+  background-color: #fff;
+  border: 4px solid black;
+  border-radius: 12px;
+  box-shadow: 6px 6px 0 #000;
+  margin-top: 2rem;
+  box-sizing: border-box;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin-top: 1rem;
+  max-width: 100%;
+  word-break: break-word;
+}
+
+li {
+  background: #d94f30;
+  color: white;
+  border: 3px solid black;
+  padding: 0.6rem 1rem;
+  margin-bottom: 0.6rem;
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+h2 {
+  font-size: 1.3rem;
+  margin-top: 2rem;
+  border-left: 5px solid black;
+  padding-left: 0.6rem;
+}
+
+.floating-log {
+  background: white;
+  border: 3px solid black;
+  padding: 1rem;
+  border-radius: 8px;
+  box-shadow: 6px 6px 0 #000;
+  width: 300px;
+  position: absolute;
+  z-index: 9999;
+}
+
+.log-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #fdbb2d;
+  padding: 0.4rem 0.6rem;
+  margin: -1rem -1rem 1rem -1rem;
+  cursor: grab;
+  border-bottom: 2px solid black;
+}
+
+.log-header:active {
+  cursor: grabbing;
+}
+
+.log-header button {
+  font-size: 1rem;
+  padding: 0.4rem 0.6rem;
+  border: 2px solid black;
+  background: #000;
+  color: white;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.log-header button:hover {
+  background-color: #333;
+}
+
+@media (max-width: 600px) {
+  h1 {
+    font-size: 1.4rem;
+    padding: 0.4rem 0.8rem;
+  }
+
+  .button_top {
+    font-size: 0.9rem;
+    padding: 0.5rem 1rem;
+  }
+
+  input[type="number"] {
+    width: 100px;
+  }
+
+  .canvas-wrapper {
+    padding: 0.5rem;
+  }
+
+  li {
+    font-size: 0.9rem;
+  }
+}
