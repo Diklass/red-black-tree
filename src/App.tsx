@@ -3,7 +3,6 @@ import './App.css';
 import TreeCanvas from './components/TreeCanvas';
 import { Tree } from './tree/Tree';
 import { useRef, useEffect } from 'react';
-import html2canvas from 'html2canvas';
 const tree = new Tree();
 
 function App() {
@@ -94,33 +93,35 @@ useEffect(() => {
             value={value}
             onChange={(e) => setValue(e.target.value)}
           />
-          <button onClick={handleInsert}>
-            <span className="button_top">Вставить</span>
-          </button>
-          <button onClick={handleDelete}>
-            <span className="button_top">Удалить</span>
-          </button>
-          <button onClick={handleClear}>
-            <span className="button_top">Очистить</span>
-          </button>
-          <button onClick={handleGenerateRandom}>
-            <span className="button_top">Случайное дерево</span>
-          </button>
-        </div>
-        <button onClick={handleSaveCanvas}>
+             <button onClick={handleInsert} title="Вставить элемент">
+              <span className="button_top">➕</span>
+            </button>
+            <button onClick={handleDelete} title="Удалить элемент">
+              <span className="button_top">🗑️</span>
+            </button>
+            <button onClick={handleClear} title="Очистить дерево">
+              <span className="button_top">♻️</span>
+            </button>
+            <button onClick={handleGenerateRandom} title="Случайное дерево">
+              <span className="button_top">🎲</span>
+            </button>
+                    <button onClick={handleSaveCanvas}>
           <span className="button_top">Сохранить как изображение</span>
         </button>
+        </div>
+
 
         <div className="canvas-wrapper">
           <TreeCanvas tree={tree} />
         </div>
 
         <div style={{ marginTop: '2rem' }}>
-          <button onClick={() => setShowLog(prev => !prev)}>
-            <span className="button_top">
-              {showLog ? 'Скрыть лог' : 'Показать лог'}
-            </span>
-          </button>
+        <button onClick={() => setShowLog(prev => !prev)} title={showLog ? "Скрыть лог" : "Показать лог"}>
+          <span className="button_top">
+            {showLog ? '📜' : '👁️‍🗨️'}
+          </span>
+        </button>
+
 
          {showLog && (
         <div

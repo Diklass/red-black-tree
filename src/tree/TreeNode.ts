@@ -8,6 +8,8 @@ export class TreeNode {
   left: TreeNode | null;
   right: TreeNode | null;
   parent: TreeNode | null;
+  x: number | undefined;
+  y: number | undefined;
 
   constructor(value: number) {
     this.value = value;
